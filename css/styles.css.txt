@@ -1,0 +1,119 @@
+:root {
+  --primary: #10b981;     /* emerald green */
+  --dark: #0f172a;        /* darker navy for navbar */
+  --light: #f8f9fa;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+  background: white;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.5) !important; /* semi-transparent dark from start */
+  transition: all 0.4s ease;
+  padding: 1rem 0;
+  backdrop-filter: blur(8px);
+}
+
+.navbar.scrolled {
+  background: rgba(15, 23, 42, 0.95) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+.hero-slide {
+  min-height: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55));
+  z-index: 1;
+}
+
+.hero-slide > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(16,185,129,0.18);
+}
+
+footer {
+  flex-shrink: 0;
+  background: var(--dark);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-slide { min-height: 80vh; height: auto; padding: 100px 0 60px; }
+}
+
+@media (max-width: 768px) {
+  .hero-slide h1 { font-size: 2.4rem; }
+  .section-title { font-size: 2.2rem; }
+}

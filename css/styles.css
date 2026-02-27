@@ -1,0 +1,191 @@
+:root {
+  --primary: #10b981;
+  --dark: #0f172a;
+  --light: #f8f9fa;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+  background: white;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.5) !important;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.navbar.scrolled {
+  background: rgba(15, 23, 42, 0.95) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary) !important;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 6px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+}
+
+.hero-slide {
+  min-height: 100vh;
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55));
+  z-index: 1;
+}
+
+.hero-slide > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-item {
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(16,185,129,0.18);
+}
+
+.fa-ul {
+  margin-left: 2.5rem; /* space for icon */
+}
+
+.fa-li {
+  left: -2.5rem;
+  width: 2rem;
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+footer {
+  flex-shrink: 0;
+  background: var(--dark);
+  color: white;
+}
+
+/* Navbar height compensation for fixed-top */
+.pt-navbar {
+  padding-top: 90px; /* Adjust based on your navbar height; ~70-80px + buffer */
+}
+
+@media (max-width: 991px) {
+  .pt-navbar { padding-top: 80px; } /* smaller on mobile */
+}
+
+/* About page enhancements */
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.aprodoor.com/wp-content/uploads/2025/03/Engineers-inspecting-The-Tower-Cascades-construction-site-scaled.webp') center/cover no-repeat;
+  min-height: 60vh;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+}
+
+.section-divider {
+  border-bottom: 3px solid var(--primary);
+  width: 80px;
+  margin: 1.5rem auto;
+}
+
+.card-enhanced {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(16,185,129,0.2);
+}
+
+.bg-accent-light {
+  background-color: rgba(16,185,129,0.05);
+  border-left: 5px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.team-img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+
+@media (max-width: 768px) {
+  .hero-slide { min-height: 80vh; height: auto; padding: 120px 0 60px; }
+  .hero-slide h1 { font-size: 2.5rem; }
+}
