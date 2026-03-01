@@ -3,6 +3,27 @@
   --dark: #0f172a;
   --light: #f8f9fa;
 }
+.btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-outline-primary{
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.fa-ul {
+  margin-left: 2.5rem; /* space for icon */
+}
+
+.fa-li {
+  left: -2.5rem;
+  width: 2rem;
+  text-align: center;
+  color: var(--primary) !important;
+  font-size: 1.1rem;
+}
 
 html, body {
   height: 100%;
@@ -112,7 +133,7 @@ main {
   left: -2.5rem;
   width: 2rem;
   text-align: center;
-  color: var(--primary);
+  color: var(--primary) !important;
   font-size: 1.1rem;
 }
 
