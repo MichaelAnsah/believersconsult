@@ -165,7 +165,7 @@ footer {
 
 /* About page enhancements */
 .about-hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.aprodoor.com/wp-content/uploads/2025/03/Engineers-inspecting-The-Tower-Cascades-construction-site-scaled.webp') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/pexels-pixabay-416405.jpg') center/cover no-repeat;
   min-height: 60vh;
   color: white;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
